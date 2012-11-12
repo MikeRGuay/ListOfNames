@@ -63,13 +63,17 @@ $(function() {
 
     // Create our global collection of **Todos**.
     window.Todos = new TodoList;
-    Todos.create({ text : 'Steve Jobs'});
-    Todos.create({ text : 'Bill Gates'});
-    Todos.create({ text : 'Mark Zuckerberg'});
-    Todos.create({ text : 'Elon Musk'});
-    Todos.create({ text : 'Larry Paige'});
-    Todos.create({ text : 'Sergey Brin'});
-    Todos.create({ text : 'Larry Ellison'});
+
+
+    if(window.localStorage.todos.length < 3){
+        Todos.create({ text : 'Steve Jobs'});
+        Todos.create({ text : 'Bill Gates'});
+        Todos.create({ text : 'Mark Zuckerberg'});
+        Todos.create({ text : 'Elon Musk'});
+        Todos.create({ text : 'Larry Paige'});
+        Todos.create({ text : 'Sergey Brin'});
+        Todos.create({ text : 'Larry Ellison'});
+    }
 
     // Todo Item View
     // --------------
